@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #262626;
+}
+h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  margin: 0;
+  padding: 0;
+  font-size: 400px;
+  text-transform: uppercase;
+  color: #fff;
+  -webkit-text-stroke: 2px #fff;
+}
+h1::before {
+  content: attr(data-text);
+  position: absolute;
+  background: linear-gradient(90deg, #d430f2, #ff002f, #e4ff00, #03a9f4, #d630f2);
+  background-size: 300%;
+  overflow: hidden;
+  transition: width 2s;
+  animation: animate 5s linear infinite;
+  width: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+h1:hover::before {
+  width: 100%;
+}
+@keyframes animate {
+  0%
+  {
+    background-position: 0 0;
+  }
+  100%
+  {
+    background-position: 300% 0;
+  }
+}
